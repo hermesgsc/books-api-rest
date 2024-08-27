@@ -15,17 +15,6 @@ connection.once("open", ()=>{
 const app = express();
 routes(app)
 
-app.get("/books/:id", (req, res) => {
-    const index = findBooks(req.params.id)
-    res.status(200).json(books[index])
-})
-
-app.put("/books/:id", (req, res) => {
-    const index = findBooks(req.params.id);
-    books[index].title = req.body.title
-    res.status(200).json(books[index])
-}) 
-
 app.delete("/books/delete/:id", (req, res) =>{
     const index =  findBooks(req.params.id)
     books.splice(index, 1)
