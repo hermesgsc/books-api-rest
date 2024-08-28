@@ -1,8 +1,9 @@
-import mongoose from "mongoose"
+import mongoose from "mongoose" 
 
-async function dataBaseConnect() {
+async function dBConnect() {
+// eslint-disable-next-line no-undef
 mongoose.connect(process.env.DB_CONNECTION_STRING)
     return mongoose.connection
 }
 
-export default dataBaseConnect;
+export default dBConnect;
